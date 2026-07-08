@@ -33,11 +33,12 @@ model Profile {
   bio          String?
   emailUpdates Boolean
   userId       String  @unique
-  user         User    @relation(fields: [userId], references: [id])
+  user         User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Category {
   id     String  @id @default(uuid())
+  name   String
   posts  Post[]
   user   User?   @relation(fields: [userId], references: [id])
   userId String?

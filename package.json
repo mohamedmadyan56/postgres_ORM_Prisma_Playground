@@ -1,16 +1,30 @@
 {
-  "name": "prisma",
+  "name": "prisma-orm-playground",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Prisma ORM learning playground \u2014 comprehensive examples of models, relationships, and queries",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "nodemon index.ts"
+    "dev": "node init && tsx watch src/index.ts",
+    "start": "node init && tsx src/index.ts",
+    "seed": "tsx src/seed.ts",
+    "build": "node init && tsc",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "prisma",
+    "orm",
+    "postgresql",
+    "typescript",
+    "playground"
+  ],
+  "author": "Mohamed Madyan",
+  "license": "MIT",
   "dependencies": {
     "@prisma/client": "6.19.3",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^3.3.2",
     "prisma": "6.19.3"
   },
   "devDependencies": {
